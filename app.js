@@ -120,5 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
+  // --- VSL Video Player click initialization ---
+  const vslPlayer = document.getElementById('vsl-player');
+  if (vslPlayer) {
+    vslPlayer.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0';
+      iframe.title = 'Stagix Data Vacuum Live Walkthrough';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.className = 'vsl-iframe';
+
+      vslPlayer.appendChild(iframe);
+      vslPlayer.style.cursor = 'default';
+    });
+  }
+
   console.log('%c⚡ STAGIX AUTONOMOUS SYSTEMS — Engine Loaded', 'color: #00d2ff; font-weight: bold; font-size: 14px;');
 });
